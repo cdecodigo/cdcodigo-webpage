@@ -1,11 +1,12 @@
 body {
-  margin: 8px;
+  margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
 code {
@@ -15,5 +16,25 @@ code {
 
 #root{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 256px auto;
+  height: 100%;
+}
+
+#navigation{
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  grid-column: 1 / 2;
+  height: 100%;
+}
+
+#content{
+  grid-column: 2 / 3;
+}
+
+#content{
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  height: 98vh;
+  /* overflow: scroll; */
+  background: #FCD712;
 }

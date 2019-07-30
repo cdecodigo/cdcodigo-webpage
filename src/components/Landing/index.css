@@ -1,0 +1,45 @@
+.landing-page{
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    height: 98vh;
+    overflow: scroll;
+    background: #FCD712;
+}
+
+.landing-page::-webkit-scrollbar { 
+    display: none; 
+}
+
+#mision{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#mision div{
+    margin: 8px;
+    padding: 8px;
+    color: #3F3D56;
+}
+
+#mision h1{
+    font-size: 56px;
+}
+
+#mision img{
+    padding: 16px;
+    height: 256px;
+    width: auto;
+}
+
+#unete{
+    background: #DF2935;
+}
+
+.portail{
+    height: 256px;
+    width: auto;
+    margin: 32px;
+    border: 10px solid #3F3D56;    
+}
+

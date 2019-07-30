@@ -43,6 +43,10 @@ class SignUpFormBase extends Component {
                         email
                     })
             })
+            .then(() => {
+                this.setState({ ...INITIAL_STATE});
+                this.props.history.push(ROUTES.HOME);
+            })
             .catch(error => {
                 this.setState({error});
             });
@@ -71,7 +75,7 @@ class SignUpFormBase extends Component {
                 <input 
                     name="username"
                     value={username}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     type="text"
                     placeholder="Full Name"
                 />

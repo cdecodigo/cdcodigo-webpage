@@ -7,13 +7,16 @@ import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+import './login.sass';
+
 const SignInPage = () => (
-    <div>
-        <h1>SignIn</h1>
+    <div id="login-page">
+        <h1>Hello World!</h1>
         <SignInForm />
         <SignInGoogle />
         <PasswordForgetLink />
         <SignUpLink />
+        <img src={require('./webdev.svg')}/>
     </div>
 );
 
@@ -31,16 +34,19 @@ class SignInFormBase extends Component {
     }
 
     onSubmit = event => {
+        console.log('event',event);
         event.preventDefault();
         const {email, password} = this.state;
 
         this.props.firebase
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
+                console.log('llegue aqui');
                 this.setState({ ...INITIAL_STATE });
                 this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
+                console.log('error');
                 this.setState({error});
             })
     }
@@ -55,7 +61,7 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <form onSubmit={this.onsubmit}>
+            <form className="login-form" onSubmit={this.onSubmit}>
                 <input 
                     name="email"
                     value={email}
