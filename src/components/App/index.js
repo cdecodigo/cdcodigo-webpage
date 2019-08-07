@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { compose } from 'recompose'; 
 
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
@@ -11,24 +12,53 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
-import { withAuthentication } from '../Session';
+import { withAuthentication, withStats } from '../Session';
+
+const routes = [
+    {
+        path: ROUTES.LANDING,
+        exact: true,
+        component: LandingPage,
+    },
+    {
+        path: ROUTES.SIGN_UP,
+        component: SignUpPage,
+    },
+    {
+        path: ROUTES.SIGN_IN,
+        component: SignInPage,
+    },
+    {
+        path: ROUTES.PASSWORD_FORGET,
+        component: PasswordForgetPage,
+    },
+    {
+        path: ROUTES.HOME,
+        component: HomePage,
+    },
+    {
+        path: ROUTES.ACCOUNT,
+        component: AccountPage,
+    },
+    {
+        path: ROUTES.ADMIN,
+        component: AdminPage,
+    }
+]
 
 const App = () => (
     <Router>
         <Navigation />
 
         <div id="content">
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-            <Route path={ROUTES.ADMIN} component={AdminPage} />
+            {routes.map((route, index) => 
+                <Route key={index} path={route.path} exact={route.exact} component={route.component}/> 
+            )}      
         </div>
         
     </Router>
     
 );
 
+// export default compose(withAuthentication, withStats)(App);
 export default withAuthentication(App);
