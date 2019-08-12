@@ -8,4 +8,19 @@ const SignOutButton = ({ firebase }) => (
    </button> 
 );
 
+const SignOutPowerButtomBase = ({ firebase }) => (
+   <i 
+      className="fas fa-power-off" 
+      // style={{
+      //    marginLeft: '16px', 
+      //    color: '#FFF',
+      //    cursor: 'pointer'
+      // }} 
+      onClick={firebase.doSignOut}></i>
+);
+
+const SignOutPowerButtom = withFirebase(SignOutPowerButtomBase);
+
 export default withFirebase(SignOutButton);
+
+export {SignOutPowerButtom};

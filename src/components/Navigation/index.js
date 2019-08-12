@@ -7,15 +7,14 @@ import * as ROLES from '../../constants/routes';
 
 import { AuthUserContext } from '../Session';
 
+import TopBaner from './TopBaner';
+
 import './index.css';
 
 const Navigation = () => (
     <div id="navigation">
 
-    <div className="profile">
-        <img src="/cdecodigo.jpg"/>
-        <h1>c de codigo</h1>
-    </div>
+    <TopBaner />
     <AuthUserContext.Consumer>
         {authUser =>
             authUser ? <NavigationAuth authUser={authUser}/> : <NavigationNonAuth />
