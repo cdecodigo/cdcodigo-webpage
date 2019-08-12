@@ -1,0 +1,59 @@
+.htmlBaner
+    position: relative
+    margin: 8px
+    padding: 8px
+    z-index: 1
+
+    spam 
+        color: #F7882F
+        font-weight: bold
+
+    &:before
+        position: absolute
+        z-index: -1
+        left: 32px
+        top: 32px
+        content: ''
+        height: 100%
+        width: 100%
+        max-width: 650px
+        background: #6B7A8F
+        border-bottom: 5px solid #F7C331
+        border-right: 5px solid #F7C331
+
+.body
+    display: flex
+    flex-flow: row
+
+.imagen 
+    display: flex
+    flex-flow: column
+    margin-left: 24px
+    
+    spam 
+        margin-left: 24px
+
+    img
+        height: 250px
+        width: auto
+        margin-left: 48px
+
+.content
+    position: relative
+    top: 128px
+    display: flex
+    flex-flow: column
+
+    p 
+        color: #DCC7AA
+    a 
+        display: flex
+        flex-flow: column
+        position: relative
+        left: 64px
+        // text-decoration: none
+        // color: #000
+    
+        button
+            margin-left: 32px
+            width: 64px
