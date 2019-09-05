@@ -13,6 +13,7 @@ import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication, withStats } from '../Session';
+import Curso from '../cursos/HTML';
 
 const routes = [
     {
@@ -43,6 +44,11 @@ const routes = [
     {
         path: ROUTES.ADMIN,
         component: AdminPage,
+    },
+    //Cursos
+    {
+        path: ROUTES.HTMLCURSO,
+        component: Curso
     }
 ]
 

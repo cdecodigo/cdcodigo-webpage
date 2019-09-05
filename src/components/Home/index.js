@@ -7,9 +7,11 @@ const HomePage = () => (
     <div style={{
         display: 'flex',
         flexFlow: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        background: '#FCD712',
+        height: '98vh'
     }}>
-        <h1>Home Page</h1>
+        <h1>Unidades</h1>
         <p>The home page is accessible by every signed in user</p>
 
         <HtmlBaner />
